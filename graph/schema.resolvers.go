@@ -5,30 +5,18 @@ package graph
 
 import (
 	"context"
-	"crypto/rand"
 	"fmt"
-	"math/big"
 
 	"github.com/aofiee/mongodb/graph/generated"
 	"github.com/aofiee/mongodb/graph/model"
 )
 
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
-	id, err := rand.Int(rand.Reader, big.NewInt(100))
-	if err != nil {
-		return nil, err
-	}
-	todo := &model.Todo{
-		Text: input.Text,
-		ID:   fmt.Sprintf("T%d", id),
-		User: input.UserID,
-	}
-	r.todos = append(r.todos, todo)
-	return todo, nil
+	panic(fmt.Errorf("not implemented"))
 }
 
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-	return r.todos, nil
+	panic(fmt.Errorf("not implemented"))
 }
 
 // Mutation returns generated.MutationResolver implementation.

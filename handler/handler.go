@@ -5,13 +5,13 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/aofiee/mongodb/graphql"
+	"github.com/aofiee/mongodb/graph/generated"
 	"github.com/gofiber/fiber/v2"
 	"github.com/valyala/fasthttp/fasthttpadaptor"
 )
 
 func GraphqlHandler(c *fiber.Ctx) error {
-	h := handler.NewDefaultServer(graphql.NewExecutableSchema(graphql.Config{}))
+	h := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{}))
 	fasthttpadaptor.NewFastHTTPHandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
 		h.ServeHTTP(writer, request)
 	})(c.Context())
