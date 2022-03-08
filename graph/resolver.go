@@ -1,6 +1,8 @@
 package graph
 
-import "github.com/aofiee/mongodb/app/graphql/model"
+import (
+	"github.com/aofiee/mongodb/graph/model"
+)
 
 // This file will not be regenerated automatically.
 //

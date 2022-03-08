@@ -1,16 +1,16 @@
 schema:
-  - app/graphql/schema/*.graphql
+  - graph/*.graphqls
 exec:
-  filename: app/graphql/generated.go
-  package: graphql
+  filename: graph/generated/generated.go
+  package: generated
 model:
-  filename: app/graphql/model/todo.go
+  filename: graph/model/todo.go
   package: model
 resolver:
   layout: follow-schema
-  dir: app/graphql/resolver
-  package: resolver
-autobind: []
+  dir: graph
+  package: graph
+autobind:
 models:
   ID:
     model:
